@@ -1,0 +1,158 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.title{
+  width: fit-content;
+  margin: auto;
+  padding-bottom: 20px;
+}
+.todo-app{
+  width: min(520px, 90%);
+  margin: auto;
+  margin-top: 15rem;
+  padding: 20px;
+  background-color: rgba(135, 207, 235, 0.23);
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+.task-input form{
+  display: grid;
+  grid-template-columns: 1fr 150px auto;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+
+.text-input,
+.date-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.text-input:hover,
+.date-input:hover{
+  background-color: rgb(233, 231, 231);
+}
+
+.add-btn {
+  background-color: rgb(0, 128, 255);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.add-btn:hover{
+  background-color: blue;
+}
+
+.list{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.row{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px;
+  background: white;
+  border-radius: 8px;
+}
+
+.status{
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.task-details{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  flex: 1;
+}
+
+.task-details span{
+  overflow-wrap: anywhere;
+}
+
+.task-details small{
+  color: rgb(80, 80, 80);
+}
+
+.edit-fields{
+  display: grid;
+  grid-template-columns: 1fr 145px;
+  gap: 8px;
+}
+
+.edit-text-input,
+.edit-date-input{
+  width: 100%;
+  padding: 8px;
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 6px;
+}
+
+.task-actions{
+  display: flex;
+  gap: 6px;
+  flex: 0 0 auto;
+}
+
+.task-actions button{
+  color: white;
+  padding: 7px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.update-btn{
+  background-color: rgb(28, 128, 90);
+}
+
+.delete-btn{
+  background-color: red;
+}
+
+.done{
+  text-decoration: line-through;
+  color: gray;
+}
+
+@media (max-width: 650px) {
+  .todo-app{
+    margin-top: 4rem;
+  }
+
+  .task-input form,
+  .edit-fields{
+    grid-template-columns: 1fr;
+  }
+
+  .row,
+  .task-actions{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .status{
+    align-self: flex-start;
+  }
+}

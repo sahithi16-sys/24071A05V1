@@ -5,7 +5,7 @@
 
 <!-- For XSD Validation, comment above line and uncomment the below line -->
 <bookstore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="bookstore.xsd"> 
-
+<!-- <bookstore> -->
     <book>
         <title>Clean Code</title>
         <author>Robert C. Martin</author>
@@ -19,4 +19,6 @@
         <price>900</price>
         <year>2009</year>
     </book>
+<!-- </bookstore> -->
+
 </bookstore>
