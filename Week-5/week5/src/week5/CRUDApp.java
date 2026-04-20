@@ -21,16 +21,16 @@ public class CRUDApp {
 		}
 	}
 
-//	static void create() {
-//		try {
-//			Statement stmt = con.createStatement();
-//			stmt.executeUpdate(
-//					"CREATE TABLE IF NOT EXISTS Students(RNO INT PRIMARY KEY, NAME VARCHAR(20) NOT NULL, MARK1 INT NOT NULL, MARK2 INT NOT NULL, MARK3 INT NOT NULL);");
-//			System.out.println("Table Created Successfully!");
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//	}
+	static void create() {
+		try {
+			Statement stmt = con.createStatement();
+			stmt.executeUpdate(
+					"CREATE TABLE IF NOT EXISTS Students(RNO INT PRIMARY KEY, NAME VARCHAR(20) NOT NULL, MARK1 INT NOT NULL, MARK2 INT NOT NULL, MARK3 INT NOT NULL);");
+			System.out.println("Table Created Successfully!");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 	static void insert() {
 		try {
