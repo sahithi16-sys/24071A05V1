@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    
+    <div class="weather-page">
+        <h1>Weather Forecast</h1>
+        <form>
+            <input type="text" placeholder="Enter City name" id="city-name">
+            <button type="button" onclick="getWeather()">Fetch Weather</button>
+        </form>
+
+        <canvas width="300" height="100" id="weather-chart"></canvas>
+        <script src="script.js"></script>
+    </div>
+
+</body>
+</html>

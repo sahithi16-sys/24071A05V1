@@ -1,0 +1,5 @@
+INDEX VERSION 1.134+C:\Users\VEERAMOSU\Documents\WAD Practice\Week-5\.metadata\.plugins\org.eclipse.jdt.core
+16354420.index
+321006917.index
+2828604163.index
+1865797976.index

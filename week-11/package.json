@@ -1,0 +1,14 @@
+{
+  "name": "week-11-student-crud-jwt",
+  "version": "1.0.0",
+  "description": "Express REST API for student CRUD operations with JWT authentication",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "bcryptjs": "^2.4.3"
+  }
+}
