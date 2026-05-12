@@ -9,4 +9,4 @@
 ![alt text](edit_op.png)
 
 4. Delete Student
-![alt text](image.png)e
+![alt text](delete.png)e
