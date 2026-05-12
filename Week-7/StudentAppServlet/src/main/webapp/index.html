@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #F0EEEA;
+            margin: 0;
+        }
+
+        .container {
+            width: 400px;
+            margin: 80px auto;
+            background: #FFFFFF;
+            padding: 25px;
+            border: 3px solid black;
+            box-shadow: 8px 8px 0px black;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 2px solid black;
+            background: #F0DDD6;
+        }
+
+        input:focus {
+            outline: none;
+            background: #F0EEEA;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            border: 3px solid black;
+            background: #97B3AE;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 4px 4px 0px black;
+        }
+
+        button:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px black;
+        }
+
+        .view-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .view-link a {
+            text-decoration: none;
+            padding: 8px 12px;
+            border: 2px solid black;
+            background: #D2E0D3;
+            color: black;
+            display: inline-block;
+            box-shadow: 3px 3px 0px black;
+            font-weight: bold;
+        }
+
+        .view-link a:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0px black;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <h2>Add Student</h2>
+
+        <form action="student" method="post">
+            <label>Name</label>
+            <input type="text" name="name" required>
+
+            <label>Age</label>
+            <input type="number" name="age" required>
+
+            <label>Course</label>
+            <input type="text" name="course" required>
+
+            <button type="submit">Add Student</button>
+        </form>
+
+        <div class="view-link">
+            <a href="view">View Students</a>
+        </div>
+    </div>
+
+</body>
+</html>
