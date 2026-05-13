@@ -112,7 +112,7 @@ public class CRUDApp {
 	public static void main(String[] args) {
 
         connect();
-        create();
+//        create();
 
         while (true) {
             System.out.println("\n1.Insert  2.View  3.Update  4.Delete  5.Exit");
