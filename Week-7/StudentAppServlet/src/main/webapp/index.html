@@ -2,119 +2,148 @@
 <html>
 <head>
     <title>Add Student</title>
-
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+        :root {
+            --bg: #F4F7FA;
+            --panel: #ffffff;
+            --primary: #34699A;
+            --text: #1F2933;
+            --muted: #556471;
+            --border: rgba(63, 84, 112, 0.14);
         }
-
-        .container {
-            width: 450px;
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border: none;
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #333;
-            font-size: 28px;
-            font-weight: 600;
-        }
-
-        label {
-            display: block;
-            margin-top: 20px;
-            font-weight: 500;
-            color: #555;
-            font-size: 16px;
-        }
-
-        input {
-            width: 100%;
-            padding: 12px 15px;
-            margin-top: 8px;
-            border: 2px solid #e1e5e9;
-            border-radius: 8px;
-            background: #f8f9fa;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
+        * {
             box-sizing: border-box;
         }
-
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+            color: var(--text);
+            background: radial-gradient(circle at top left, rgba(52, 105, 154, 0.12), transparent 28%),
+                        linear-gradient(180deg, #eef4fb 0%, #f8fbfd 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+        .page-card {
+            width: 100%;
+            max-width: 540px;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            box-shadow: 0 30px 70px rgba(37, 78, 126, 0.09);
+            padding: 36px;
+        }
+        .page-header {
+            margin-bottom: 26px;
+            text-align: center;
+        }
+        .page-header h1 {
+            margin: 0;
+            font-size: 2rem;
+            letter-spacing: -0.04em;
+        }
+        .page-header p {
+            margin: 12px auto 0;
+            max-width: 420px;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+        .form-grid {
+            display: grid;
+            gap: 18px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: #fbfdff;
+            color: var(--text);
+            font-size: 1rem;
+            transition: border-color 0.18s ease, box-shadow 0.18s ease;
+        }
         input:focus {
             outline: none;
-            border-color: #667eea;
-            background: #ffffff;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(52, 105, 154, 0.12);
         }
-
         button {
             width: 100%;
-            margin-top: 30px;
-            padding: 15px;
+            padding: 16px 18px;
             border: none;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 999px;
+            background: var(--primary);
             color: white;
-            font-weight: 600;
-            font-size: 16px;
+            font-size: 1rem;
+            font-weight: 700;
             cursor: pointer;
-            border-radius: 8px;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
         }
-
         button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+            transform: translateY(-1px);
+            box-shadow: 0 16px 32px rgba(52, 105, 154, 0.18);
         }
-
         .view-link {
             text-align: center;
-            margin-top: 25px;
+            margin-top: 22px;
         }
-
         .view-link a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: 999px;
+            border: 1px solid var(--primary);
+            color: var(--primary);
             text-decoration: none;
-            padding: 12px 25px;
-            border: 2px solid #667eea;
-            background: transparent;
-            color: #667eea;
-            display: inline-block;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            font-weight: 700;
+            transition: background-color 0.18s ease, color 0.18s ease;
         }
-
         .view-link a:hover {
-            background: #667eea;
-            color: white;
+            background: rgba(52, 105, 154, 0.08);
+            color: var(--primary);
+        }
+        @media (max-width: 520px) {
+            .page-card {
+                padding: 28px 22px;
+            }
+            .page-header h1 {
+                font-size: 1.75rem;
+            }
         }
     </style>
-
 </head>
 <body>
-
-    <div class="container">
-        <h2>Add Student</h2>
+    <div class="page-card">
+        <div class="page-header">
+            <h1>Add Student</h1>
+            <p>Enter the student details below and save the record to the class registry.</p>
+        </div>
 
         <form action="student" method="post">
-            <label>Name</label>
-            <input type="text" name="name" required>
+            <div class="form-grid">
+                <div>
+                    <label for="name">Name</label>
+                    <input id="name" type="text" name="name" required>
+                </div>
 
-            <label>Age</label>
-            <input type="number" name="age" required>
+                <div>
+                    <label for="age">Age</label>
+                    <input id="age" type="number" name="age" required>
+                </div>
 
-            <label>Course</label>
-            <input type="text" name="course" required>
+                <div>
+                    <label for="course">Course</label>
+                    <input id="course" type="text" name="course" required>
+                </div>
+            </div>
 
             <button type="submit">Add Student</button>
         </form>
@@ -123,6 +152,5 @@
             <a href="view">View Students</a>
         </div>
     </div>
-
 </body>
 </html>
