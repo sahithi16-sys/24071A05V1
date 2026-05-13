@@ -40,90 +40,144 @@ public class EditStudentServlet extends HttpServlet {
                 out.println("<head>");
                 out.println("<title>Edit Student</title>");
 
-                
                 out.println("<style>");
-
-                out.println("body {");
-                out.println("  font-family: 'Segoe UI', sans-serif;");
-                out.println("  background: #F0EEEA;");
-                out.println("  margin: 0;");
-                out.println("}");
-
-                out.println(".container {");
-                out.println("  width: 420px;");
-                out.println("  margin: 80px auto;");
-                out.println("  background: #FFFFFF;");
-                out.println("  padding: 25px;");
-                out.println("  border: 3px solid black;");
-                out.println("  box-shadow: 8px 8px 0px black;");
-                out.println("}");
-
-                out.println("h2 {");
-                out.println("  text-align: center;");
-                out.println("  margin-bottom: 20px;");
-                out.println("}");
-
-                out.println("label {");
-                out.println("  display: block;");
-                out.println("  margin-top: 12px;");
-                out.println("  font-weight: bold;");
-                out.println("}");
-
-                out.println("input {");
-                out.println("  width: 100%;");
-                out.println("  padding: 10px;");
-                out.println("  margin-top: 5px;");
-                out.println("  border: 2px solid black;");
-                out.println("  background: #F0DDD6;");
-                out.println("}");
-
-                out.println("input:focus {");
-                out.println("  outline: none;");
-                out.println("  background: #F0EEEA;");
-                out.println("}");
-
-                out.println("button {");
-                out.println("  width: 100%;");
-                out.println("  margin-top: 20px;");
-                out.println("  padding: 12px;");
-                out.println("  border: 3px solid black;");
-                out.println("  background: #97B3AE;");
-                out.println("  font-weight: bold;");
-                out.println("  cursor: pointer;");
-                out.println("  box-shadow: 4px 4px 0px black;");
-                out.println("}");
-
-                out.println("button:hover {");
-                out.println("  transform: translate(2px,2px);");
-                out.println("  box-shadow: 2px 2px 0px black;");
-                out.println("}");
-
+                out.println("  :root {");
+                out.println("    --bg: #F4F7FA;");
+                out.println("    --panel: #ffffff;");
+                out.println("    --primary: #34699A;");
+                out.println("    --primary-soft: #7DA7C5;");
+                out.println("    --accent: #DA7B93;");
+                out.println("    --text: #1F2933;");
+                out.println("    --border: rgba(63, 84, 112, 0.12);");
+                out.println("  }");
+                out.println("  * { box-sizing: border-box; }");
+                out.println("  body {");
+                out.println("    margin: 0;");
+                out.println("    min-height: 100vh;");
+                out.println("    font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;");
+                out.println("    color: var(--text);");
+                out.println("    background: radial-gradient(circle at top left, rgba(52, 105, 154, 0.12), transparent 30%), var(--bg);");
+                out.println("  }");
+                out.println("  .page-frame {");
+                out.println("    max-width: 600px;");
+                out.println("    margin: 60px auto;");
+                out.println("    padding: 0 18px 40px;");
+                out.println("  }");
+                out.println("  .page-header {");
+                out.println("    margin-bottom: 24px;");
+                out.println("    text-align: center;");
+                out.println("  }");
+                out.println("  .page-header h1 {");
+                out.println("    margin: 0;");
+                out.println("    font-size: 2rem;");
+                out.println("    letter-spacing: -0.04em;");
+                out.println("  }");
+                out.println("  .page-header p {");
+                out.println("    margin: 10px auto 0;");
+                out.println("    max-width: 460px;");
+                out.println("    color: #556471;");
+                out.println("    line-height: 1.65;");
+                out.println("  }");
+                out.println("  .panel {");
+                out.println("    background: var(--panel);");
+                out.println("    border: 1px solid var(--border);");
+                out.println("    border-radius: 24px;");
+                out.println("    box-shadow: 0 24px 60px rgba(37, 78, 126, 0.09);");
+                out.println("    padding: 32px;");
+                out.println("  }");
+                out.println("  .field-group {");
+                out.println("    display: grid;");
+                out.println("    gap: 18px;");
+                out.println("  }");
+                out.println("  label {");
+                out.println("    display: block;");
+                out.println("    margin-bottom: 8px;");
+                out.println("    font-weight: 700;");
+                out.println("  }");
+                out.println("  input {");
+                out.println("    width: 100%;");
+                out.println("    padding: 14px 16px;");
+                out.println("    border: 1px solid rgba(63, 84, 112, 0.16);");
+                out.println("    border-radius: 14px;");
+                out.println("    background: #FBFDFF;");
+                out.println("    color: var(--text);");
+                out.println("    transition: border-color 0.18s ease, box-shadow 0.18s ease;");
+                out.println("  }");
+                out.println("  input:focus {");
+                out.println("    outline: none;");
+                out.println("    border-color: var(--primary);");
+                out.println("    box-shadow: 0 0 0 3px rgba(52, 105, 154, 0.12);");
+                out.println("  }");
+                out.println("  .button-row {");
+                out.println("    display: flex;");
+                out.println("    flex-direction: column;");
+                out.println("    gap: 14px;");
+                out.println("    margin-top: 28px;");
+                out.println("  }");
+                out.println("  button {");
+                out.println("    width: 100%;");
+                out.println("    padding: 14px 18px;");
+                out.println("    border: none;");
+                out.println("    border-radius: 999px;");
+                out.println("    background: var(--primary);");
+                out.println("    color: white;");
+                out.println("    font-size: 1rem;");
+                out.println("    font-weight: 700;");
+                out.println("    cursor: pointer;");
+                out.println("    transition: transform 0.18s ease, box-shadow 0.18s ease;");
+                out.println("  }");
+                out.println("  button:hover {");
+                out.println("    transform: translateY(-1px);");
+                out.println("    box-shadow: 0 14px 28px rgba(52, 105, 154, 0.18);");
+                out.println("  }");
+                out.println("  .back-link {");
+                out.println("    display: inline-block;");
+                out.println("    color: #556471;");
+                out.println("    text-decoration: none;");
+                out.println("    font-size: 0.95rem;");
+                out.println("    margin-top: 16px;");
+                out.println("  }");
+                out.println("  .back-link:hover {");
+                out.println("    color: var(--primary);");
+                out.println("  }");
+                out.println("  @media (max-width: 520px) {");
+                out.println("    .page-frame { margin: 30px auto; padding: 0 14px 32px; }");
+                out.println("    .panel { padding: 24px; }");
+                out.println("    .page-header h1 { font-size: 1.75rem; }");
+                out.println("  }");
                 out.println("</style>");
                 out.println("</head>");
 
                 out.println("<body>");
-
-                out.println("<div class='container'>");
-                out.println("<h2>Edit Student</h2>");
-
-                out.println("<form action='update' method='post'>");
-
-                out.println("<input type='hidden' name='id' value='" + rs.getInt("id") + "'>");
-
-                out.println("<label>Name</label>");
-                out.println("<input type='text' name='name' value='" + rs.getString("name") + "' required>");
-
-                out.println("<label>Age</label>");
-                out.println("<input type='number' name='age' value='" + rs.getInt("age") + "' required>");
-
-                out.println("<label>Course</label>");
-                out.println("<input type='text' name='course' value='" + rs.getString("course") + "' required>");
-
-                out.println("<button type='submit'>Update Student</button>");
-
-                out.println("</form>");
-                out.println("</div>");
-
+                out.println("  <div class='page-frame'>");
+                out.println("    <div class='page-header'>");
+                out.println("      <h1>Edit Student</h1>");
+                out.println("      <p>Update the record details below and save changes to the student database.</p>");
+                out.println("    </div>");
+                out.println("    <div class='panel'>");
+                out.println("      <form action='update' method='post'>");
+                out.println("        <input type='hidden' name='id' value='" + rs.getInt("id") + "'>");
+                out.println("        <div class='field-group'>");
+                out.println("          <div>");
+                out.println("            <label for='name'>Name</label>");
+                out.println("            <input id='name' type='text' name='name' value='" + rs.getString("name") + "' required>");
+                out.println("          </div>");
+                out.println("          <div>");
+                out.println("            <label for='age'>Age</label>");
+                out.println("            <input id='age' type='number' name='age' value='" + rs.getInt("age") + "' required>");
+                out.println("          </div>");
+                out.println("          <div>");
+                out.println("            <label for='course'>Course</label>");
+                out.println("            <input id='course' type='text' name='course' value='" + rs.getString("course") + "' required>");
+                out.println("          </div>");
+                out.println("        </div>");
+                out.println("        <div class='button-row'>");
+                out.println("          <button type='submit'>Update Student</button>");
+                out.println("          <a class='back-link' href='view'>Return to Student List</a>");
+                out.println("        </div>");
+                out.println("      </form>");
+                out.println("    </div>");
+                out.println("  </div>");
                 out.println("</body>");
                 out.println("</html>");
             }
