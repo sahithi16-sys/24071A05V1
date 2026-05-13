@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- (for DTD validation) -->
-<!-- <!DOCTYPE bookstore SYSTEM "bookstore.dtd"> -->
+<!DOCTYPE bookstore SYSTEM "bookstore.dtd">
 
 <!-- For XSD Validation, comment above line and uncomment the below line -->
-<bookstore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="bookstore.xsd"> 
-<!-- <bookstore> -->
+<!-- <bookstore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="bookstore.xsd">  -->
+<bookstore>
     <book>
         <title>Clean Code</title>
-        <author>Robert C. Martin</author>
+        <author>Robert C. Martin</author
+            >
         <price>450</price>
         <year>2008</year>
     </book>
@@ -19,6 +20,4 @@
         <price>900</price>
         <year>2009</year>
     </book>
-<!-- </bookstore> -->
-
 </bookstore>
